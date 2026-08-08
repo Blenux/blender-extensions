@@ -1,0 +1,39 @@
+/* BLX - Extension listing table styles only */
+/* layout.css, style.css, and i3a.css are loaded remotely from blenux.github.io */
+/* This file only adds table styling that the website CSS files don't cover */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid var(--border);
+    background-color: var(--window-bg);
+}
+
+thead th {
+    background-color: var(--focused);
+    color: var(--fg);
+    border-bottom: 2px solid var(--accent);
+    text-align: left;
+    padding: var(--gap);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tbody td {
+    padding: var(--gap);
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+tbody tr {
+    background-color: var(--unfocused);
+}
+
+tbody tr:hover {
+    background-color: var(--focused);
+}
+
+tbody tr:first-child td {
+    border-top: none;
+}

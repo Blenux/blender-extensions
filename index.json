@@ -22,9 +22,9 @@
         "3.11",
         "3.13"
       ],
-      "archive_url": "./io_scene_dae_v0.1.0.zip",
+      "archive_url": "./io_beamng_dae_v0.1.0.zip",
       "archive_size": 2413793,
-      "archive_hash": "sha256:6e32873ebee8489b8a837b12819da988b317469c21a8e0d2860cc10d664ce83b"
+      "archive_hash": "sha256:cb16aebea036208b32400c78ba2bddd8f72608a23884f7919bc54e2055df8a7f"
     }
   ]
 }
