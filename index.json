@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "blocklist": [],
+  "data": [
+    {
+      "schema_version": "1.0.0",
+      "id": "io_beamng_dae",
+      "name": "BeamNG DAE/CDAE Import/Export",
+      "tagline": "BeamNG Collada (.dae) and Cached Collada (.cdae) mesh importer/exporter",
+      "version": "0.1.0",
+      "type": "add-on",
+      "maintainer": "Blenux",
+      "license": [
+        "SPDX:GPL-2.0-or-later"
+      ],
+      "blender_version_min": "5.0.1",
+      "platforms": [
+        "linux-x64",
+        "windows-x64"
+      ],
+      "python_versions": [
+        "3.11",
+        "3.13"
+      ],
+      "archive_url": "./io_scene_dae_v0.1.0.zip",
+      "archive_size": 2413793,
+      "archive_hash": "sha256:6e32873ebee8489b8a837b12819da988b317469c21a8e0d2860cc10d664ce83b"
+    }
+  ]
+}
