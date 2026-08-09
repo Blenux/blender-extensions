@@ -15,7 +15,7 @@ thead th {
     border-bottom: 2px solid var(--accent);
     text-align: left;
     padding: var(--gap);
-    font-size: 0.85rem;
+    /* font-size: 0.85rem; */
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -23,7 +23,7 @@ thead th {
 tbody td {
     padding: var(--gap);
     border-top: 1px solid var(--border);
-    font-size: 0.85rem;
+    /* font-size: 0.85rem; */
 }
 
 tbody tr {
