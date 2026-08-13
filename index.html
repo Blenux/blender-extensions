@@ -201,26 +201,19 @@ tbody tr:first-child td {
 <p>Add-on</p>
 <hr>
 <table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Website</th>
-    <th>Blender Versions</th>
-    <th>Python Versions</th>
-    <th>Platforms</th>
-    <th>Size</th>
-  </tr>
-  <tr>
-    <td><tt><a href="./io_beamng_dae_v1.0.0.zip?repository=.%2Findex.json&blender_version_min=5.0.1&platforms=linux-x64%2Cwindows-x64&python_versions=3.11%2C3.13">io_beamng_dae-1.0.0</a></tt></td>
-    <td>BeamNG Collada Importer/Exporter</td>
-    <td>Import and export .dae and .cdae mesh files</td>
-    <td><a href="https://github.com/Blenux/io_beamng_dae_dev">GitHub</a></td>
-    <td>5.0.1 - ~</td>
-    <td>3.11, 3.13</td>
-    <td>linux-x64, windows-x64</td>
-    <td>2.3MB</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Website</th>
+      <th>Blender Versions</th>
+      <th>Python Versions</th>
+      <th>Platforms</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody id="ext-table-body"></tbody>
 </table>
 
 <section id="guide">
@@ -251,7 +244,7 @@ tbody tr:first-child td {
       <h3>Drag &amp; Drop Extension</h3>
     </div>
     <p>Drag and drop an extension's <strong>.zip</strong> link from the table above directly onto the Blender window. This will add the repository so the extension is available to install.</p>
-    <a href="./io_beamng_dae_v1.0.0.zip?repository=.%2Findex.json&blender_version_min=5.0.1&platforms=linux-x64%2Cwindows-x64&python_versions=3.11%2C3.13" class="repo-drag-link">📦 io_beamng_dae_v1.0.0.zip</a>
+    <div id="ext-drag-links"></div>
   </div>
 </div>
 
@@ -269,5 +262,74 @@ tbody tr:first-child td {
 <footer>
 Built 2026-08-08, 22:56
 </footer>
+
+<!-- BLX - Dynamically populate extension table and drag-and-drop links from index.json -->
+<script>
+function formatSize(bytes) {
+  if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + 'MB';
+  if (bytes >= 1024) return (bytes / 1024).toFixed(1) + 'KB';
+  return bytes + 'B';
+}
+
+function buildZipUrl(ext) {
+  const params = new URLSearchParams({
+    repository: './index.json',
+    blender_version_min: ext.blender_version_min,
+    platforms: ext.platforms.join(','),
+    python_versions: ext.python_versions.join(',')
+  });
+  return ext.archive_url + '?' + params.toString();
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+fetch('./index.json')
+  .then(res => res.json())
+  .then(data => {
+    const tbody = document.getElementById('ext-table-body');
+    const dragLinks = document.getElementById('ext-drag-links');
+
+    data.data.forEach(ext => {
+      const zipUrl = buildZipUrl(ext);
+      const extId = ext.id + '-' + ext.version;
+      const websiteCell = ext.website && ext.website !== '~'
+        ? '<a href="' + escapeHtml(ext.website) + '">GitHub</a>'
+        : '~';
+      const blenderVer = ext.blender_version_min + ' - ~';
+      const pyVer = ext.python_versions.join(', ');
+      const platforms = ext.platforms.join(', ');
+      const size = formatSize(ext.archive_size);
+
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td><tt><a href="' + escapeHtml(zipUrl) + '">' + escapeHtml(extId) + '</a></tt></td>' +
+        '<td>' + escapeHtml(ext.name) + '</td>' +
+        '<td>' + escapeHtml(ext.tagline) + '</td>' +
+        '<td>' + websiteCell + '</td>' +
+        '<td>' + escapeHtml(blenderVer) + '</td>' +
+        '<td>' + escapeHtml(pyVer) + '</td>' +
+        '<td>' + escapeHtml(platforms) + '</td>' +
+        '<td>' + escapeHtml(size) + '</td>';
+      tbody.appendChild(tr);
+
+      const fileName = ext.archive_url.split('/').pop();
+      const a = document.createElement('a');
+      a.href = zipUrl;
+      a.className = 'repo-drag-link';
+      a.textContent = '\uD83D\uDCE6 ' + fileName;
+      a.style.display = 'block';
+      a.style.marginTop = '0.5rem';
+      dragLinks.appendChild(a);
+    });
+  })
+  .catch(err => {
+    document.getElementById('ext-table-body').innerHTML =
+      '<tr><td colspan="8">Failed to load extensions: ' + escapeHtml(err.message) + '</td></tr>';
+  });
+</script>
 </body>
 </html>
