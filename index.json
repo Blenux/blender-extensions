@@ -11,7 +11,7 @@
       "type": "add-on",
       "maintainer": "Blenux",
       "license": [
-        "SPDX:GPL-2.0-or-later"
+        "SPDX:GPL-3.0-or-later"
       ],
       "blender_version_min": "5.0.1",
       "website": "https://github.com/Blenux/io_beamng_dae_dev",
@@ -28,8 +28,8 @@
         "3.13"
       ],
       "archive_url": "./io_beamng_dae_v1.0.0.zip",
-      "archive_size": 2560584,
-      "archive_hash": "sha256:777e99c3aa3930d5e8e0463d5e00c752cd696f0f15e6bfa83bfc92e0e07ac58d"
+      "archive_size": 2560585,
+      "archive_hash": "sha256:7697fdc3938f2be6071b7c31cfd5829cd684870c62bf4dedad3e00eeecd1fae1"
     }
   ]
 }
