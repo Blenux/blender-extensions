@@ -79,9 +79,9 @@ tbody tr:first-child td {
 
 .guide-card {
     padding: 1rem;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 4px;
-    background-color: var(--bg);
+    background-color: var(--window-bg);
 }
 
 .guide-card-header {
@@ -124,8 +124,8 @@ tbody tr:first-child td {
 .repo-drag-link {
     display: inline-block;
     padding: 0.6rem 1rem;
-    background-color: var(--focused);
-    border: 1px solid var(--accent);
+    background-color: var(--unfocused);
+    border: 2px solid var(--border);
     border-radius: 4px;
     text-decoration: none;
     color: var(--accent);
@@ -136,8 +136,9 @@ tbody tr:first-child td {
 }
 
 .repo-drag-link:hover {
-    background-color: var(--accent);
-    color: var(--bg);
+    background-color: var(--focused);
+    border-color: var(--accent);
+    color: var(--fg);
 }
 
 .url-copy-box {
@@ -150,19 +151,24 @@ tbody tr:first-child td {
     flex: 1;
     min-width: 0;
     padding: 0.5rem;
-    background-color: var(--unfocused);
-    border: 1px solid var(--border);
+    background-color: var(--window-bg);
+    border: 2px solid var(--border);
     border-radius: 4px;
     color: var(--fg);
     font-family: monospace;
     font-size: 14px;
 }
 
+.url-copy-box input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
 .url-copy-box button {
     padding: 0.5rem 1rem;
-    background-color: var(--accent);
-    color: var(--bg);
-    border: none;
+    background-color: var(--focused);
+    color: var(--fg);
+    border: 2px solid var(--accent);
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
@@ -171,23 +177,21 @@ tbody tr:first-child td {
 }
 
 .url-copy-box button:hover {
-    opacity: 0.85;
+    background-color: var(--accent);
+    color: var(--bg);
 }
 
 .guide-video {
     margin-top: 1rem;
 }
 
-.guide-video h3 {
-    margin-bottom: 0.5rem;
-    color: var(--fg);
-}
-
 .guide-video video {
     width: 100%;
-    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
     border: 2px solid var(--border);
     border-radius: 4px;
+    background-color: var(--bg);
     display: block;
 }
 </style>
@@ -237,7 +241,6 @@ tbody tr:first-child td {
       <button onclick="navigator.clipboard.writeText(document.getElementById('repo-url').value); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
     </div>
     <div class="guide-video">
-      <h3>Demonstration</h3>
       <video controls>
         <source src="add_repo.webm" type="video/webm">
         Your browser does not support the video tag.
@@ -253,7 +256,6 @@ tbody tr:first-child td {
     <p>Drag and drop an extension's <strong>.zip</strong> link from the table above directly onto the Blender window. This will add the repository so the extension is available to install.</p>
     <div id="ext-drag-links"></div>
     <div class="guide-video">
-      <h3>Demonstration</h3>
       <video controls>
         <source src="drag_drop_ext.webm" type="video/webm">
         Your browser does not support the video tag.
