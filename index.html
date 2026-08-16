@@ -236,6 +236,13 @@ tbody tr:first-child td {
       <input type="text" readonly value="https://blenux.github.io/blender-extensions/index.json" id="repo-url" onclick="this.select()">
       <button onclick="navigator.clipboard.writeText(document.getElementById('repo-url').value); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
     </div>
+    <div class="guide-video">
+      <h3>Demonstration</h3>
+      <video controls>
+        <source src="add_repo.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
 
   <div class="guide-card">
@@ -245,15 +252,14 @@ tbody tr:first-child td {
     </div>
     <p>Drag and drop an extension's <strong>.zip</strong> link from the table above directly onto the Blender window. This will add the repository so the extension is available to install.</p>
     <div id="ext-drag-links"></div>
+    <div class="guide-video">
+      <h3>Demonstration</h3>
+      <video controls>
+        <source src="drag_drop_ext.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-</div>
-
-<div class="guide-video">
-  <h3>Demonstration</h3>
-  <video controls>
-    <source src="add_repo.webm" type="video/webm">
-    Your browser does not support the video tag.
-  </video>
 </div>
 </section>
 
