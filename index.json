@@ -6,7 +6,29 @@
       "schema_version": "1.0.0",
       "id": "io_beamng_dae",
       "name": "BeamNG Collada Importer/Exporter",
-      "tagline": "Import and export .dae and .cdae mesh files",
+      "tagline": "Import and export .dae and .cdae mesh files plus full materials pipeline",
+      "version": "2.1.0",
+      "type": "add-on",
+      "maintainer": "Blenux",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "blender_version_min": "5.0.1",
+      "website": "https://github.com/Blenux/io_beamng_dae",
+      "tags": [
+        "Import-Export",
+        "Mesh",
+        "Material"
+      ],
+      "archive_url": "./io_beamng_dae_v2.1.0.zip",
+      "archive_size": 153861,
+      "archive_hash": "sha256:237c58de9419107b0bdca787f699fb967f6ef869c7eefbbdc56b039437a7eb94"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "io_beamng_dae_dev",
+      "name": "BeamNG Collada Importer/Exporter (Native)",
+      "tagline": "Import and export .dae and .cdae mesh files — native C++ backend variant",
       "version": "1.0.0",
       "type": "add-on",
       "maintainer": "Blenux",
