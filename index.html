@@ -283,8 +283,8 @@ function buildZipUrl(ext) {
   const params = new URLSearchParams({
     repository: './index.json',
     blender_version_min: ext.blender_version_min,
-    platforms: ext.platforms.join(','),
-    python_versions: ext.python_versions.join(',')
+    platforms: (ext.platforms || []).join(','),
+    python_versions: (ext.python_versions || []).join(',')
   });
   return ext.archive_url + '?' + params.toString();
 }
@@ -308,8 +308,8 @@ fetch('./index.json')
         ? '<a href="' + escapeHtml(ext.website) + '">GitHub</a>'
         : '~';
       const blenderVer = ext.blender_version_min + ' - ~';
-      const pyVer = ext.python_versions.join(', ');
-      const platforms = ext.platforms.join(', ');
+      const pyVer = ext.python_versions ? ext.python_versions.join(', ') : 'all';
+      const platforms = ext.platforms ? ext.platforms.join(', ') : 'all';
       const size = formatSize(ext.archive_size);
 
       const tr = document.createElement('tr');
