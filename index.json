@@ -16,13 +16,16 @@
       ],
       "blender_version_min": "5.0.1",
       "website": "https://github.com/Blenux/io_beamng_dae",
+      "permissions": {
+        "files": "Read BeamNG.drive game content (vehicle zips, materials.json, textures) to resolve materials and meshes"
+      },
       "tags": [
         "Import-Export",
         "Mesh"
       ],
       "archive_url": "./io_beamng_dae_v2.1.0.zip",
-      "archive_size": 153872,
-      "archive_hash": "sha256:7ce7e414ce51c3d1066fc52c855df80f9d6c0ef33064263286c88df812e645bc"
+      "archive_size": 154050,
+      "archive_hash": "sha256:7872b24f08a06efca58b8647a3e1f4eee7a1544eb02ed9ba179263b9ec8b23d2"
     }
   ]
 }
