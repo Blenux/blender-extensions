@@ -1,6 +1,7 @@
 {
   "version": "v1",
   "blocklist": [],
+  "assetlib_auth_method": "PER_LIBRARY",
   "data": [
     {
       "schema_version": "1.0.0",
@@ -17,41 +18,11 @@
       "website": "https://github.com/Blenux/io_beamng_dae",
       "tags": [
         "Import-Export",
-        "Mesh",
-        "Material"
-      ],
-      "archive_url": "./io_beamng_dae_v2.1.0.zip",
-      "archive_size": 153861,
-      "archive_hash": "sha256:237c58de9419107b0bdca787f699fb967f6ef869c7eefbbdc56b039437a7eb94"
-    },
-    {
-      "schema_version": "1.0.0",
-      "id": "io_beamng_dae_dev",
-      "name": "BeamNG Collada Importer/Exporter (Native)",
-      "tagline": "Import and export .dae and .cdae mesh files — native C++ backend variant",
-      "version": "1.0.0",
-      "type": "add-on",
-      "maintainer": "Blenux",
-      "license": [
-        "SPDX:GPL-3.0-or-later"
-      ],
-      "blender_version_min": "5.0.1",
-      "website": "https://github.com/Blenux/io_beamng_dae_dev",
-      "tags": [
-        "Import-Export",
         "Mesh"
       ],
-      "platforms": [
-        "linux-x64",
-        "windows-x64"
-      ],
-      "python_versions": [
-        "3.11",
-        "3.13"
-      ],
-      "archive_url": "./io_beamng_dae_v1.0.0.zip",
-      "archive_size": 2560585,
-      "archive_hash": "sha256:7697fdc3938f2be6071b7c31cfd5829cd684870c62bf4dedad3e00eeecd1fae1"
+      "archive_url": "./io_beamng_dae_v2.1.0.zip",
+      "archive_size": 153872,
+      "archive_hash": "sha256:7ce7e414ce51c3d1066fc52c855df80f9d6c0ef33064263286c88df812e645bc"
     }
   ]
 }
